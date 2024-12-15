@@ -21,7 +21,7 @@ phases:
       - echo "dependencies installed"
   build:
     commands:
-      - docker build . -t dhruvdarji123/netflix-react-app:latest --build-arg TMDB_V3_API_KEY=$KEY
+      - docker build . -t boatengkwasi1991/netflix-react-app:latest --build-arg TMDB_V3_API_KEY=$KEY
   post_build:
     commands:
       - echo "waiting right now"
