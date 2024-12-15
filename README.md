@@ -297,6 +297,43 @@ sudo service codedeploy-agent status
 
 * Step 5: Review
 
+# Steps to Create a Service Role for CodePipeline
+
+## Open the IAM Console:
+1. Go to the [IAM Console](https://console.aws.amazon.com/iam/).
+
+## Create a Role:
+1. Click **Roles** > **Create role**.
+2. **Trusted entity type**: Select **AWS service**.
+3. **Use case**: Select **CodePipeline** (this use case is not listed but will work with the correct trust policy).
+
+## Set the Trust Policy:
+1. On the next screen, choose **Custom trust policy** and paste the following JSON policy:
+
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "Service": "codepipeline.amazonaws.com"
+            },
+            "Action": "sts:AssumeRole"
+        }
+    ]
+}
+```
+
+## Attach Permissions:
+1. Add the following managed policies:
+   - **AWSCodeDeployFullAccess**
+   - **AWSCodePipelineFullAccess** (or custom permissions for finer control)
+   - **AWSCodeBuildAdminAccess** (for the build stage)
+   - **AWSCodeDeployRole** (for the deploy stage)
+   - **AmazonS3FullAccess** or a policy that allows access to specific S3 buckets used in the pipeline.
+
+
 ![](https://miro.medium.com/v2/resize:fit:802/1*QeQ1src8x9U7AkoFMybm6g.png)
 
 ![](https://miro.medium.com/v2/resize:fit:802/1*wzOqHTKYqQhnVW8_pxHu8g.png)
