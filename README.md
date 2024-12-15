@@ -194,19 +194,13 @@ In the CodeBuild console Click on Edit button -&gt; Artifacts -&gt; Type: â€œS3â
 
 * Create Application and Compute platform is EC2/On-premises
 
-Create Service role (Give permissions -
+Create Service role (Give permissions - CodeDeploy
 
-1.`AmazonEC2FullAccess`
+1.`AWSCodeDeployFullAccess`
 
-2.`AmazonEC2RoleforAWSCodeDeploy`
+2.`AWSCodeDeployRole`
 
-3\. `AmazonS3FullAccess`
 
-4.`AWSCodeDeployeFullAccess`
-
-5.`AWSCodeDeployRole`
-
-6.`AmazonEC2RoleforAWSCodeDeployLimitaccesstoS3`
 
 ![](https://miro.medium.com/v2/resize:fit:802/1*Qy8myUrKBs2Mdz3zcYarnw.png)
 
