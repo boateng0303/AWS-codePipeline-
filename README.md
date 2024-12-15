@@ -297,6 +297,8 @@ sudo service codedeploy-agent status
 
 * Step 5: Review
 
+* After the deployment is successful, don't forget to open port 8080 on the EC2 instance for code deploy since it opens on that port
+
 # Steps to Create a Service Role for CodePipeline
 
 ## Open the IAM Console:
